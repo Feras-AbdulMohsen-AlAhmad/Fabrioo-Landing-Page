@@ -1,29 +1,41 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap");
+/* If you have the font files locally, place them here:
+   /fonts/CoconAE-Next-Arabic.woff2
+   /fonts/CoconAE-Next-Arabic.woff
+*/
+@font-face {
+  font-family: "CoconÆ Next Arabic";
+  src:
+    url("../fonts/CoconAE-Next-Arabic.woff2") format("woff2"),
+    url("../fonts/CoconAE-Next-Arabic.woff") format("woff");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
 
 :root {
   /* ===============================
      Brand / Primary Colors
   =============================== */
-  --color-primary-700: #059c8f; /* Deep Turquoise */
-  --color-primary-500: #1fccb7; /* Turquoise (Main) */
-  --color-primary-200: #94fbe7; /* Light Turquoise */
+  --color-primary-700: #059c8f;
+  --color-primary-500: #1fccb7;
+  --color-primary-200: #94fbe7;
 
   /* ===============================
      Secondary / Navy Colors
   =============================== */
-  --color-secondary-800: #000043; /* Navy (Main) */
-  --color-secondary-600: #1c1f9b; /* Indigo Navy */
-  --color-secondary-400: #4044fc; /* Bright Royal Blue */
+  --color-secondary-800: #000043;
+  --color-secondary-600: #1c1f9b;
+  --color-secondary-400: #4044fc;
 
   /* ===============================
      Accent / Orange Colors
   =============================== */
-  --color-accent-700: #bb2b13; /* Deep Orange */
-  --color-accent-500: #f15a24; /* Orange (Main) */
-  --color-accent-200: #f8a779; /* Soft Orange */
+  --color-accent-700: #bb2b13;
+  --color-accent-500: #f15a24;
+  --color-accent-200: #f8a779;
 
   /* ===============================
-     Success / Caribbean Green
+     Success
   =============================== */
   --color-success-600: #0ca67d;
   --color-success-500: #0ad8a1;
@@ -31,7 +43,7 @@
   --color-success-100: #e3fff1;
 
   /* ===============================
-     Danger / Error (Red)
+     Danger / Error
   =============================== */
   --color-danger-700: #982121;
   --color-danger-600: #d62d20;
@@ -49,9 +61,6 @@
   --color-neutral-100: #efefef;
   --color-neutral-50: #f3f4f5;
 
-  /* ===============================
-     Base Colors
-  =============================== */
   --color-white: #ffffff;
 
   /* ===============================
@@ -85,9 +94,18 @@ html {
 }
 
 body {
-  font-family: "Inter", sans-serif;
+  font-family:
+    "CoconÆ Next Arabic",
+    system-ui,
+    -apple-system,
+    "Segoe UI",
+    Roboto,
+    Arial,
+    sans-serif;
   background: var(--bg);
   color: var(--text);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 /* Base text */
@@ -168,6 +186,11 @@ header.header .header-buttons a img {
   max-width: 100%;
 }
 
+.appstore-badge {
+  height: 64px;
+  width: auto;
+}
+
 /* Header image positioning */
 header.header .header-img {
   position: relative;
@@ -195,8 +218,10 @@ header.header .header-img img {
   backdrop-filter: blur(10px);
 }
 
-.fabrioo-navbar .navbar-brand span {
-  color: var(--color-white);
+.brand-logo {
+  height: 34px;
+  width: auto;
+  display: block;
 }
 
 .fabrioo-navbar .nav-link {
