@@ -1,4 +1,4 @@
-// Bootstrap validation
+// Bootstrap validation (disable submission if invalid)
 (function () {
   "use strict";
 
@@ -20,6 +20,6 @@
   });
 })();
 
-// Footer year
+// Footer year (safe check)
 var yearEl = document.getElementById("copyrightSpan");
 if (yearEl) yearEl.textContent = new Date().getFullYear();

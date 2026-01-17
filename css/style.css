@@ -4,23 +4,23 @@
   /* ===============================
      Brand / Primary Colors
   =============================== */
-  --color-primary-700: #059c8f;
-  --color-primary-500: #1fccb7;
-  --color-primary-200: #94fbe7;
+  --color-primary-700: #059c8f; /* Deep Turquoise */
+  --color-primary-500: #1fccb7; /* Turquoise (Main) */
+  --color-primary-200: #94fbe7; /* Light Turquoise */
 
   /* ===============================
      Secondary / Navy Colors
   =============================== */
-  --color-secondary-800: #000043;
-  --color-secondary-600: #1c1f9b;
-  --color-secondary-400: #4044fc;
+  --color-secondary-800: #000043; /* Navy (Main) */
+  --color-secondary-600: #1c1f9b; /* Indigo Navy */
+  --color-secondary-400: #4044fc; /* Bright Royal Blue */
 
   /* ===============================
      Accent / Orange Colors
   =============================== */
-  --color-accent-700: #bb2b13;
-  --color-accent-500: #f15a24;
-  --color-accent-200: #f8a779;
+  --color-accent-700: #bb2b13; /* Deep Orange */
+  --color-accent-500: #f15a24; /* Orange (Main) */
+  --color-accent-200: #f8a779; /* Soft Orange */
 
   /* ===============================
      Success / Caribbean Green
@@ -49,7 +49,29 @@
   --color-neutral-100: #efefef;
   --color-neutral-50: #f3f4f5;
 
+  /* ===============================
+     Base Colors
+  =============================== */
   --color-white: #ffffff;
+
+  /* ===============================
+     Semantic Tokens (Use Everywhere)
+  =============================== */
+  --bg: var(--color-neutral-50);
+  --surface: var(--color-white);
+  --surface-2: var(--color-neutral-100);
+
+  --text: var(--color-secondary-800);
+  --text-muted: var(--color-neutral-700);
+
+  --brand: var(--color-primary-500);
+  --brand-strong: var(--color-primary-700);
+
+  --accent: var(--color-accent-500);
+  --accent-strong: var(--color-accent-700);
+
+  --border: var(--color-neutral-200);
+  --shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
 }
 
 * {
@@ -58,8 +80,52 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: "Inter", sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+/* Base text */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--text);
+}
+p {
+  color: var(--text-muted);
+}
+a {
+  color: var(--brand-strong);
+  text-decoration: none;
+}
+a:hover {
+  color: var(--brand);
+}
+
+/* ===============================
+   Buttons
+=============================== */
+.btn-fabrioo {
+  background: var(--accent);
+  color: var(--color-white);
+  border: 1px solid var(--accent-strong);
+  border-radius: 12px;
+  padding: 10px 16px;
+  font-weight: 600;
+  transition: 0.2s ease;
+}
+
+.btn-fabrioo:hover {
+  background: var(--accent-strong);
+  color: var(--color-white);
 }
 
 /* ===============================
@@ -73,42 +139,42 @@ header.header {
 }
 
 header.header .overlay {
-  opacity: 0.95;
-  padding-top: 20px;
-  padding-bottom: 60px;
+  background: rgba(243, 244, 245, 0.72);
+  padding: 20px 0 60px;
   position: relative;
 }
 
-header.header .overlay .header-block {
-  margin-top: 90px;
+.header-block {
+  margin-top: 60px;
 }
 
-header.header .overlay .header-block h1 {
-  font-size: 32px;
-  color: var(--color-secondary-800);
+header.header .header-text h1 {
+  font-size: 34px;
   line-height: 1.25;
   margin-bottom: 18px;
+  color: var(--text);
 }
 
-header.header .overlay .header-block p {
+header.header .header-text p {
   font-size: 16px;
   line-height: 1.9;
-  color: var(--color-secondary-800);
-  margin-bottom: 32px;
-  max-width: 520px;
+  margin-bottom: 28px;
+  max-width: 560px;
+  color: var(--text);
 }
 
-header.header .overlay .header-buttons a img {
+header.header .header-buttons a img {
   width: 220px;
   max-width: 100%;
 }
 
-header.header .overlay .header-img {
+/* Header image positioning */
+header.header .header-img {
   position: relative;
   min-height: 420px;
 }
 
-header.header .overlay .header-img img {
+header.header .header-img img {
   max-width: 260px;
   width: 100%;
   position: absolute;
@@ -118,35 +184,61 @@ header.header .overlay .header-img img {
 }
 
 /* ===============================
+   Navbar
+=============================== */
+.fabrioo-navbar {
+  background: rgba(0, 0, 67, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 14px;
+  padding: 12px 14px;
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(10px);
+}
+
+.fabrioo-navbar .navbar-brand span {
+  color: var(--color-white);
+}
+
+.fabrioo-navbar .nav-link {
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 500;
+}
+
+.fabrioo-navbar .nav-link:hover,
+.fabrioo-navbar .nav-link:focus {
+  color: var(--color-primary-200);
+}
+
+/* ===============================
    Features
 =============================== */
 section.feature {
   padding: 80px 0;
-  background-color: #fff;
+  background: var(--surface);
   position: relative;
 }
 
 section.feature .features {
-  margin-top: 70px;
+  margin-top: 40px;
 }
 
 section.feature .features .d-flex {
-  margin-bottom: 40px;
+  margin-bottom: 36px;
   align-items: flex-start;
   gap: 16px;
 }
 
 section.feature .features .d-flex h5 {
   font-size: 20px;
-  color: #080808;
   margin-bottom: 8px;
+  color: var(--text);
 }
 
 section.feature .features .d-flex p {
   font-size: 14px;
-  line-height: 1.6;
-  color: #757474;
+  line-height: 1.7;
   margin: 0;
+  color: var(--text-muted);
 }
 
 section.feature .feature-img img {
@@ -158,14 +250,12 @@ section.feature .feature-img img {
    Products / Options
 =============================== */
 section.option {
-  padding-top: 90px;
-  padding-bottom: 90px;
-  background-color: #f9f8f8;
-  position: relative;
+  padding: 90px 0;
+  background: var(--surface-2);
 }
 
 section.option .options {
-  margin-top: 20px;
+  margin-top: 10px;
 }
 
 section.option .options .d-flex {
@@ -177,46 +267,55 @@ section.option .options .d-flex {
 section.option .options .d-flex h5 {
   font-size: 20px;
   line-height: 1.5;
-  color: #141414;
+  color: var(--text);
   margin-bottom: 6px;
 }
 
 section.option .options .d-flex p {
   font-size: 14px;
-  line-height: 1.6;
-  color: #757474;
+  line-height: 1.7;
   margin: 0;
+  color: var(--text-muted);
+}
+
+section.option .option-img img {
+  width: 100%;
+  border-radius: 14px;
+  box-shadow: var(--shadow);
 }
 
 /* ===============================
    Slider / Gallery
 =============================== */
 section.slider {
-  background-color: #fff;
+  background: var(--surface);
   padding: 80px 0;
-  position: relative;
 }
 
 section.slider .slider-text h3 {
   font-size: 32px;
-  color: #141414;
+  color: var(--text);
   margin-bottom: 40px;
 }
 
 section.slider .slider-carousel .carousel-inner {
   width: 60%;
   margin: auto;
+  border-radius: 14px;
+  box-shadow: var(--shadow);
+  overflow: hidden;
 }
 
 section.slider .slider-carousel .carousel-control-prev,
 section.slider .slider-carousel .carousel-control-next {
   width: 64px;
   height: 64px;
-  border: 1px solid #ef473a;
+  border: 1px solid var(--accent);
   border-radius: 50%;
-  color: #ef473a;
+  color: var(--accent);
   opacity: 1;
   margin-top: 130px;
+  background: rgba(255, 255, 255, 0.65);
 }
 
 section.slider .slider-carousel .carousel-indicators {
@@ -226,12 +325,12 @@ section.slider .slider-carousel .carousel-indicators {
 section.slider .slider-carousel .carousel-indicators button {
   width: 14px;
   height: 14px;
-  border: 1px solid #ef473a;
+  border: 1px solid var(--accent);
   border-radius: 50%;
 }
 
 section.slider .slider-carousel .carousel-indicators button.active {
-  background-color: #ef473a;
+  background-color: var(--accent);
 }
 
 /* ===============================
@@ -245,18 +344,18 @@ section.faq {
 }
 
 section.faq .overlay {
-  background-color: rgba(0, 0, 0, 0.72);
+  background-color: rgba(0, 0, 67, 0.74);
   padding: 70px 0;
 }
 
 section.faq .overlay .faq-title h3 {
   font-size: 30px;
-  color: #fff;
+  color: var(--color-white);
   margin-bottom: 40px;
 }
 
 section.faq .overlay .accordion .accordion-item {
-  background-color: rgba(255, 255, 255, 0.14);
+  background-color: rgba(255, 255, 255, 0.12);
   margin-bottom: 18px;
   border: 0;
   border-radius: 0;
@@ -265,7 +364,7 @@ section.faq .overlay .accordion .accordion-item {
 section.faq .overlay .accordion .accordion-item .accordion-header button {
   background-color: transparent;
   font-size: 16px;
-  color: #fff;
+  color: var(--color-white);
   border-bottom: 0;
 }
 
@@ -300,7 +399,7 @@ section.faq .overlay .accordion .accordion-item .accordion-header button:focus {
 section.faq .overlay .accordion .accordion-body p {
   font-size: 14px;
   line-height: 1.7;
-  color: #d4d4d4;
+  color: var(--color-neutral-200);
   margin: 0;
 }
 
@@ -308,20 +407,21 @@ section.faq .overlay .accordion .accordion-body p {
    Footer
 =============================== */
 footer.footer {
-  background-color: #232323;
+  background-color: var(--color-secondary-800);
   padding-top: 70px;
+  color: var(--color-white);
 }
 
 footer.footer .top-footer {
-  border-bottom: 2px solid #292828;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
   padding-bottom: 60px;
 }
 
 footer.footer .top-footer .widget h4 {
   font-size: 20px;
-  color: #f4f8fb;
+  color: var(--color-white);
   padding-bottom: 18px;
-  border-bottom: 2px solid #292828;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
   margin-bottom: 22px;
   position: relative;
 }
@@ -330,7 +430,7 @@ footer.footer .top-footer .widget h4::after {
   content: "";
   width: 90px;
   height: 2px;
-  background-color: #ef473a;
+  background-color: var(--brand);
   position: absolute;
   left: 0;
   bottom: -1px;
@@ -339,24 +439,24 @@ footer.footer .top-footer .widget h4::after {
 footer.footer .top-footer .widget p.aboutus-p {
   font-size: 14px;
   line-height: 1.9;
-  color: #b6b6b6;
-  margin-bottom: 28px;
+  color: rgba(255, 255, 255, 0.75);
+  margin-bottom: 22px;
 }
 
 footer.footer .top-footer .widget li.list-inline-item a {
   width: 44px;
   height: 44px;
   line-height: 44px;
-  background-color: #353638;
-  color: #fff;
+  background-color: rgba(255, 255, 255, 0.12);
+  color: var(--color-white);
   display: block;
   text-align: center;
   border-radius: 50%;
-  transition: all 0.3s ease;
+  transition: all 0.25s ease;
 }
 
 footer.footer .top-footer .widget li.list-inline-item a:hover {
-  background-color: #ef473a;
+  background-color: var(--brand);
 }
 
 footer.footer .top-footer .widget ul.tweets {
@@ -367,48 +467,49 @@ footer.footer .top-footer .widget ul.tweets {
 footer.footer .top-footer .widget ul.tweets li:not(:last-child) {
   padding-bottom: 14px;
   margin-bottom: 14px;
-  border-bottom: 2px solid #292828;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
 }
 
 footer.footer .top-footer .widget ul.tweets li p {
   font-size: 13px;
-  color: #b6b6b6;
+  color: rgba(255, 255, 255, 0.75);
   line-height: 1.7;
   display: inline;
   margin-left: 8px;
 }
 
 footer.footer .top-footer .widget ul.tweets li i {
-  color: #ef473a;
+  color: var(--brand);
 }
 
 footer.footer .top-footer .widget form input {
   font-size: 14px;
-  color: #c6c6c6;
+  color: var(--color-neutral-200);
   line-height: 25px;
-  border: 0;
+  border: 1px solid rgba(255, 255, 255, 0.12);
   margin-bottom: 12px;
-  background-color: #2c2b2b;
-  border-radius: 0;
+  background-color: rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
   text-align: left;
 }
 
-footer.footer .top-footer .widget form button {
-  font-size: 14px;
-  color: #fff;
-  line-height: 25px;
-  background-color: #ef473a;
-  border-radius: 0;
+footer.footer .top-footer .widget form input::placeholder {
+  color: rgba(255, 255, 255, 0.65);
+}
+
+footer.footer .top-footer .widget form input:focus {
+  box-shadow: 0 0 0 3px rgba(31, 204, 183, 0.25);
+  border-color: rgba(31, 204, 183, 0.55);
 }
 
 footer.footer .top-footer .widget form .invalid-feedback {
-  margin-top: -10px;
+  margin-top: -8px;
   margin-bottom: 10px;
 }
 
 footer.footer .copyright {
   font-size: 14px;
-  color: #8a8a8a;
+  color: rgba(255, 255, 255, 0.65);
   line-height: 70px;
   text-align: center;
 }
@@ -417,7 +518,7 @@ footer.footer .copyright {
    Responsive
 =============================== */
 @media (max-width: 992px) and (min-width: 768px) {
-  header.header .overlay .header-img {
+  header.header .header-img {
     min-height: 360px;
   }
 
@@ -434,16 +535,16 @@ footer.footer .copyright {
     text-align: center;
   }
 
-  header.header .overlay .header-block p {
+  header.header .header-text p {
     margin-left: auto;
     margin-right: auto;
   }
 
-  header.header .overlay .header-img {
+  header.header .header-img {
     min-height: 320px;
   }
 
-  header.header .overlay .header-img img {
+  header.header .header-img img {
     bottom: -360px;
   }
 
