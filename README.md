@@ -1,7 +1,7 @@
 # Fabrioo — Smart Clothing Landing Page 👕✨
 
 <p align="center">
-  <img src="__images/Logo.svg" alt="Fabrioo Logo" width="200">
+  <img src="images/Logo.svg" alt="Fabrioo Logo" width="200">
 </p>
 
 <p align="center">
@@ -57,11 +57,11 @@ This landing page showcases a smart clothing brand experience, complete with pro
 ## 📸 Preview
 
 <p align="center">
-  <img src="__images/mobile.png" alt="Mobile Preview" width="300">
+  <img src="images/mobile.png" alt="Mobile Preview" width="300">
 </p>
 
 <p align="center">
-  <img src="__images/PhoneMokups.png" alt="Product Mockups" width="600">
+  <img src="images/PhoneMokups.png" alt="Product Mockups" width="600">
 </p>
 
 ---
@@ -82,13 +82,13 @@ This landing page showcases a smart clothing brand experience, complete with pro
 
 ## 🛠 Tech Stack
 
-| Technology | Purpose |
-|------------|---------|
-| **HTML5** | Semantic markup structure |
-| **CSS3** | Styling with custom properties |
-| **JavaScript** | Form validation and interactivity |
-| **Bootstrap 5** | Responsive grid and components |
-| **Font Awesome** | Icon library |
+| Technology       | Purpose                           |
+| ---------------- | --------------------------------- |
+| **HTML5**        | Semantic markup structure         |
+| **CSS3**         | Styling with custom properties    |
+| **JavaScript**   | Form validation and interactivity |
+| **Bootstrap 5**  | Responsive grid and components    |
+| **Font Awesome** | Icon library                      |
 
 ### Documentation Links
 
@@ -133,6 +133,7 @@ This landing page showcases a smart clothing brand experience, complete with pro
 #### Option 1: Direct Open
 
 1. Download or clone the repository:
+
    ```bash
    git clone https://github.com/yourusername/fabrioo.git
    ```
@@ -167,11 +168,9 @@ All branding colors are defined in `css/style.css` using CSS custom properties u
 
 ```css
 :root {
-  --primary-color: /* Turquoise */
-  --secondary-color: /* Navy */
-  --accent-color: /* Orange */
-  --neutral-100: /* Light Grey */
-  --neutral-900: /* Dark Grey */
+  --primary-color: /* Turquoise */ --secondary-color: /* Navy */
+    --accent-color: /* Orange */ --neutral-100: /* Light Grey */
+    --neutral-900: /* Dark Grey */;
 }
 ```
 
@@ -183,6 +182,7 @@ All branding colors are defined in `css/style.css` using CSS custom properties u
 - **Neutrals (Greys)** — Backgrounds, borders, body text
 
 This token-based approach ensures:
+
 - Consistent styling across all components
 - Easy theme modifications
 - Scalable design system
