@@ -17,27 +17,17 @@
 
 ## 📋 Table of Contents
 
-- [Fabrioo — Smart Clothing Landing Page 👕✨](#fabrioo--smart-clothing-landing-page-)
-  - [📋 Table of Contents](#-table-of-contents)
-  - [🎯 Overview](#-overview)
-  - [📸 Preview](#-preview)
-  - [✨ Features](#-features)
-  - [🛠 Tech Stack](#-tech-stack)
-    - [Documentation Links](#documentation-links)
-  - [📁 Project Structure](#-project-structure)
-  - [🚀 Getting Started](#-getting-started)
-    - [Prerequisites](#prerequisites)
-    - [Installation \& Running](#installation--running)
-      - [Option 1: Direct Open](#option-1-direct-open)
-      - [Option 2: Local Server (Recommended)](#option-2-local-server-recommended)
-  - [🎨 Design System](#-design-system)
-    - [Color Palette](#color-palette)
-  - [🖋 Custom Font](#-custom-font)
-    - [Font Files Location](#font-files-location)
-  - [🧩 Sections](#-sections)
-  - [📦 Deployment](#-deployment)
-    - [Deploy Your Own Version](#deploy-your-own-version)
-  - [📄 License](#-license)
+- [Overview](#-overview)
+- [Preview](#-preview)
+- [Features](#-features)
+- [Tech Stack](#-tech-stack)
+- [Project Structure](#-project-structure)
+- [Getting Started](#-getting-started)
+- [Design System](#-design-system)
+- [Custom Font](#-custom-font)
+- [Sections](#-sections)
+- [Deployment](#-deployment)
+- [License](#-license)
 
 ---
 
@@ -82,13 +72,13 @@ This landing page showcases a smart clothing brand experience, complete with pro
 
 ## 🛠 Tech Stack
 
-| Technology       | Purpose                           |
-| ---------------- | --------------------------------- |
-| **HTML5**        | Semantic markup structure         |
-| **CSS3**         | Styling with custom properties    |
-| **JavaScript**   | Form validation and interactivity |
-| **Bootstrap 5**  | Responsive grid and components    |
-| **Font Awesome** | Icon library                      |
+| Technology | Purpose |
+|------------|---------|
+| **HTML5** | Semantic markup structure |
+| **CSS3** | Styling with custom properties |
+| **JavaScript** | Form validation and interactivity |
+| **Bootstrap 5** | Responsive grid and components |
+| **Font Awesome** | Icon library |
 
 ### Documentation Links
 
@@ -133,7 +123,6 @@ This landing page showcases a smart clothing brand experience, complete with pro
 #### Option 1: Direct Open
 
 1. Download or clone the repository:
-
    ```bash
    git clone https://github.com/yourusername/fabrioo.git
    ```
@@ -168,9 +157,11 @@ All branding colors are defined in `css/style.css` using CSS custom properties u
 
 ```css
 :root {
-  --primary-color: /* Turquoise */ --secondary-color: /* Navy */
-    --accent-color: /* Orange */ --neutral-100: /* Light Grey */
-    --neutral-900: /* Dark Grey */;
+  --primary-color: /* Turquoise */
+  --secondary-color: /* Navy */
+  --accent-color: /* Orange */
+  --neutral-100: /* Light Grey */
+  --neutral-900: /* Dark Grey */
 }
 ```
 
@@ -182,7 +173,6 @@ All branding colors are defined in `css/style.css` using CSS custom properties u
 - **Neutrals (Greys)** — Backgrounds, borders, body text
 
 This token-based approach ensures:
-
 - Consistent styling across all components
 - Easy theme modifications
 - Scalable design system
