@@ -1,7 +1,7 @@
 # Fabrioo — Smart Clothing Landing Page 👕✨
 
 <p align="center">
-  <img src="__images/Logo.svg__" alt="Fabrioo Logo" width="200">
+  <img src="__images/Logo.svg" alt="Fabrioo Logo" width="200">
 </p>
 
 <p align="center">
@@ -17,17 +17,27 @@
 
 ## 📋 Table of Contents
 
-- [Overview](#-overview)
-- [Preview](#-preview)
-- [Features](#-features)
-- [Tech Stack](#-tech-stack)
-- [Project Structure](#-project-structure)
-- [Getting Started](#-getting-started)
-- [Design System](#-design-system)
-- [Custom Font](#-custom-font)
-- [Sections](#-sections)
-- [Deployment](#-deployment)
-- [License](#-license)
+- [Fabrioo — Smart Clothing Landing Page 👕✨](#fabrioo--smart-clothing-landing-page-)
+  - [📋 Table of Contents](#-table-of-contents)
+  - [🎯 Overview](#-overview)
+  - [📸 Preview](#-preview)
+  - [✨ Features](#-features)
+  - [🛠 Tech Stack](#-tech-stack)
+    - [Documentation Links](#documentation-links)
+  - [📁 Project Structure](#-project-structure)
+  - [🚀 Getting Started](#-getting-started)
+    - [Prerequisites](#prerequisites)
+    - [Installation \& Running](#installation--running)
+      - [Option 1: Direct Open](#option-1-direct-open)
+      - [Option 2: Local Server (Recommended)](#option-2-local-server-recommended)
+  - [🎨 Design System](#-design-system)
+    - [Color Palette](#color-palette)
+  - [🖋 Custom Font](#-custom-font)
+    - [Font Files Location](#font-files-location)
+  - [🧩 Sections](#-sections)
+  - [📦 Deployment](#-deployment)
+    - [Deploy Your Own Version](#deploy-your-own-version)
+  - [📄 License](#-license)
 
 ---
 
@@ -47,11 +57,11 @@ This landing page showcases a smart clothing brand experience, complete with pro
 ## 📸 Preview
 
 <p align="center">
-  <img src="__images/mobile.png__" alt="Mobile Preview" width="300">
+  <img src="__images/mobile.png" alt="Mobile Preview" width="300">
 </p>
 
 <p align="center">
-  <img src="__images/PhoneMokups.png__" alt="Product Mockups" width="600">
+  <img src="__images/PhoneMokups.png" alt="Product Mockups" width="600">
 </p>
 
 ---
