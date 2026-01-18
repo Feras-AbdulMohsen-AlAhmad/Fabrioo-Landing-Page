@@ -35,7 +35,8 @@
             <div class="container">
 
                 <!-- Bootstrap Navbar -->
-                <nav class="navbar navbar-expand-lg navbar-dark fabrioo-navbar" aria-label="Main navigation">
+                <nav class="navbar navbar-expand-lg navbar-dark fabrioo-navbar reveal reveal-down"
+                    aria-label="Main navigation">
                     <a class="navbar-brand d-flex align-items-center" href="#home" aria-label="Fabrioo Home">
                         <img class="brand-logo" src="images/Logo.svg" alt="Fabrioo logo" />
                     </a>
@@ -64,18 +65,18 @@
                     <div class="col-md-7 order-md-2">
                         <div class="header-block">
                             <div class="header-text">
-                                <h1>Where Comfort Meets Elegance.</h1>
-                                <p>
+                                <h1 class="reveal reveal-up delay-1">Where Comfort Meets Elegance.</h1>
+                                <p class="reveal reveal-up delay-2">
                                     Fabrioo is a smart clothing experience designed for everyday comfort, wellbeing,
                                     and a seamless personalized journey.
                                 </p>
                             </div>
 
-                            <div class="header-buttons d-flex flex-wrap gap-3">
-                                <a href="#" aria-label="Get it on Google Play">
+                            <div class="header-buttons d-flex flex-wrap gap-3 reveal reveal-up delay-3">
+                                <a href="#" aria-label="Get it on Google Play" class="hover-float">
                                     <img src="images/google-play-badge.svg" alt="Get it on Google Play" />
                                 </a>
-                                <a href="#" aria-label="Download on the App Store">
+                                <a href="#" aria-label="Download on the App Store" class="hover-float">
                                     <img class="appstore-badge" src="images/apple-Store-Badge.svg"
                                         alt="Download on the App Store" />
                                 </a>
@@ -85,7 +86,8 @@
 
                     <div class="col-md-5 order-md-1">
                         <div class="header-img text-center">
-                            <img src="images/mobile.png" alt="Fabrioo app preview" />
+                            <img class="hero-phone-float reveal reveal-scale delay-2" src="images/mobile.png"
+                                alt="Fabrioo app preview" />
                         </div>
                     </div>
                 </div>
@@ -97,14 +99,14 @@
     <main>
 
         <!-- Features -->
-        <section class="feature" id="features">
+        <section class="feature section-pad" id="features">
             <div class="container">
                 <div class="row g-0 align-items-center">
 
                     <div class="col-md-4">
                         <div class="features">
-                            <div class="d-flex">
-                                <div class="flex-shrink-0">
+                            <div class="d-flex reveal reveal-left delay-1 feature-card">
+                                <div class="flex-shrink-0 icon-badge">
                                     <img src="images/icons/step.svg" alt="Daily comfort" />
                                 </div>
                                 <div class="flex-grow-1 ms-3">
@@ -113,8 +115,8 @@
                                 </div>
                             </div>
 
-                            <div class="d-flex">
-                                <div class="flex-shrink-0">
+                            <div class="d-flex reveal reveal-left delay-2 feature-card">
+                                <div class="flex-shrink-0 icon-badge">
                                     <img src="images/icons/gym.svg" alt="Performance support" />
                                 </div>
                                 <div class="flex-grow-1 ms-3">
@@ -126,15 +128,15 @@
                     </div>
 
                     <div class="col-md-4">
-                        <div class="feature-img text-center">
+                        <div class="feature-img text-center reveal reveal-up delay-2">
                             <img src="images/mobile2.png" alt="App screens preview" />
                         </div>
                     </div>
 
                     <div class="col-md-4">
                         <div class="features">
-                            <div class="d-flex">
-                                <div class="flex-shrink-0">
+                            <div class="d-flex reveal reveal-right delay-1 feature-card">
+                                <div class="flex-shrink-0 icon-badge">
                                     <img src="images/icons/icon.svg" alt="Lightweight materials" />
                                 </div>
                                 <div class="flex-grow-1 ms-3">
@@ -143,8 +145,8 @@
                                 </div>
                             </div>
 
-                            <div class="d-flex">
-                                <div class="flex-shrink-0">
+                            <div class="d-flex reveal reveal-right delay-2 feature-card">
+                                <div class="flex-shrink-0 icon-badge">
                                     <img src="images/icons/meditation.svg" alt="Wellbeing and calm" />
                                 </div>
                                 <div class="flex-grow-1 ms-3">
@@ -160,13 +162,14 @@
         </section>
 
         <!-- Products -->
-        <section class="option" id="products">
+        <section class="option section-pad" id="products">
             <div class="container">
                 <div class="row align-items-center">
+
                     <div class="col-md-7 order-md-2">
                         <div class="options">
 
-                            <div class="d-flex">
+                            <div class="d-flex reveal reveal-up delay-1 product-card">
                                 <div class="flex-shrink-0">
                                     <img style="width: 64px;" src="images/pant2.png" alt="Smart walking pants" />
                                 </div>
@@ -176,7 +179,7 @@
                                 </div>
                             </div>
 
-                            <div class="d-flex">
+                            <div class="d-flex reveal reveal-up delay-2 product-card">
                                 <div class="flex-shrink-0">
                                     <img style="width: 64px;" src="images/hoody.png" alt="Stress-smart hoodie" />
                                 </div>
@@ -187,7 +190,7 @@
                                 </div>
                             </div>
 
-                            <div class="d-flex">
+                            <div class="d-flex reveal reveal-up delay-3 product-card">
                                 <div class="flex-shrink-0">
                                     <img style="width: 64px;" src="images/shirt.png" alt="Everyday comfort shirt" />
                                 </div>
@@ -201,22 +204,24 @@
                     </div>
 
                     <div class="col-md-5 order-md-1">
-                        <div class="option-img">
+                        <div class="option-img reveal reveal-left delay-2">
                             <img class="w-100" src="images/PhoneMokups.png" alt="Fabrioo product mockups" />
                         </div>
                     </div>
+
                 </div>
             </div>
         </section>
 
         <!-- Gallery / Slider -->
-        <section class="slider text-center" id="gallery">
+        <section class="slider text-center section-pad" id="gallery">
             <div class="container">
+
                 <div class="slider-text">
-                    <h3>Explore the App Screens</h3>
+                    <h3 class="reveal reveal-up">Explore the App Screens</h3>
                 </div>
 
-                <div class="slider-carousel">
+                <div class="slider-carousel reveal reveal-up delay-2">
                     <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
 
                         <div class="carousel-indicators">
@@ -257,21 +262,22 @@
 
                     </div>
                 </div>
+
             </div>
         </section>
 
         <!-- FAQ -->
-        <section class="faq" id="faq">
+        <section class="faq section-pad" id="faq">
             <div class="overlay">
                 <div class="container">
                     <div class="faq-title text-center">
-                        <h3>Frequently Asked Questions</h3>
+                        <h3 class="reveal reveal-up">Frequently Asked Questions</h3>
                     </div>
 
                     <div class="row justify-content-center">
                         <div class="col-lg-8">
 
-                            <div class="accordion" id="faqAccordion">
+                            <div class="accordion reveal reveal-up delay-2" id="faqAccordion">
 
                                 <div class="accordion-item">
                                     <h2 class="accordion-header" id="q1">
@@ -376,7 +382,8 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <div class="top-footer">
+
+            <div class="top-footer reveal reveal-up">
                 <div class="row">
 
                     <div class="col-md-4">
@@ -390,21 +397,16 @@
                                 <li class="list-inline-item">
                                     <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
                                 </li>
-
                                 <li class="list-inline-item">
                                     <a href="https://www.facebook.com/firas.fadil.5876" target="_blank"
-                                        rel="noopener noreferrer" aria-label="Facebook">
-                                        <i class="fab fa-facebook-f"></i>
-                                    </a>
+                                        rel="noopener noreferrer" aria-label="Facebook"><i
+                                            class="fab fa-facebook-f"></i></a>
                                 </li>
-
                                 <li class="list-inline-item">
                                     <a href="https://www.instagram.com/firas_a7mad/" target="_blank"
-                                        rel="noopener noreferrer" aria-label="Instagram">
-                                        <i class="fab fa-instagram"></i>
-                                    </a>
+                                        rel="noopener noreferrer" aria-label="Instagram"><i
+                                            class="fab fa-instagram"></i></a>
                                 </li>
-
                                 <li class="list-inline-item">
                                     <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
                                 </li>

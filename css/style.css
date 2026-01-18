@@ -13,45 +13,27 @@
 }
 
 :root {
-  /* ===============================
-     Brand / Primary Colors
-  =============================== */
   --color-primary-700: #059c8f;
   --color-primary-500: #1fccb7;
   --color-primary-200: #94fbe7;
 
-  /* ===============================
-     Secondary / Navy Colors
-  =============================== */
   --color-secondary-800: #000043;
   --color-secondary-600: #1c1f9b;
   --color-secondary-400: #4044fc;
 
-  /* ===============================
-     Accent / Orange Colors
-  =============================== */
   --color-accent-700: #bb2b13;
   --color-accent-500: #f15a24;
   --color-accent-200: #f8a779;
 
-  /* ===============================
-     Success
-  =============================== */
   --color-success-600: #0ca67d;
   --color-success-500: #0ad8a1;
   --color-success-200: #9aefd9;
   --color-success-100: #e3fff1;
 
-  /* ===============================
-     Danger / Error
-  =============================== */
   --color-danger-700: #982121;
   --color-danger-600: #d62d20;
   --color-danger-500: #ff3424;
 
-  /* ===============================
-     Neutral / Grey System
-  =============================== */
   --color-neutral-900: #252222;
   --color-neutral-700: #757575;
   --color-neutral-600: #838387;
@@ -63,9 +45,6 @@
 
   --color-white: #ffffff;
 
-  /* ===============================
-     Semantic Tokens (Use Everywhere)
-  =============================== */
   --bg: var(--color-neutral-50);
   --surface: var(--color-white);
   --surface-2: var(--color-neutral-100);
@@ -81,6 +60,10 @@
 
   --border: var(--color-neutral-200);
   --shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+
+  /* Animation tokens */
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --reveal-duration: 800ms;
 }
 
 * {
@@ -108,7 +91,6 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Base text */
 h1,
 h2,
 h3,
@@ -128,8 +110,12 @@ a:hover {
   color: var(--brand);
 }
 
+.section-pad {
+  padding: 80px 0;
+}
+
 /* ===============================
-   Buttons
+   Buttons + micro-interactions
 =============================== */
 .btn-fabrioo {
   background: var(--accent);
@@ -138,12 +124,21 @@ a:hover {
   border-radius: 12px;
   padding: 10px 16px;
   font-weight: 600;
-  transition: 0.2s ease;
+  transition:
+    transform 180ms var(--ease-out),
+    background 200ms var(--ease-out),
+    box-shadow 200ms var(--ease-out);
 }
 
 .btn-fabrioo:hover {
   background: var(--accent-strong);
   color: var(--color-white);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(241, 90, 36, 0.22);
+}
+
+.btn-fabrioo:active {
+  transform: translateY(0);
 }
 
 /* ===============================
@@ -191,7 +186,6 @@ header.header .header-buttons a img {
   width: auto;
 }
 
-/* Header image positioning */
 header.header .header-img {
   position: relative;
   min-height: 420px;
@@ -204,6 +198,21 @@ header.header .header-img img {
   left: 50%;
   bottom: -40px;
   transform: translateX(-50%) rotate(12deg);
+}
+
+/* Floating phone (subtle) */
+.hero-phone-float.is-visible {
+  animation: floatY 6s var(--ease-out) infinite;
+}
+
+@keyframes floatY {
+  0%,
+  100% {
+    transform: translateX(-50%) rotate(12deg) translateY(0);
+  }
+  50% {
+    transform: translateX(-50%) rotate(12deg) translateY(-10px);
+  }
 }
 
 /* ===============================
@@ -227,28 +236,66 @@ header.header .header-img img {
 .fabrioo-navbar .nav-link {
   color: rgba(255, 255, 255, 0.9);
   font-weight: 500;
+  transition:
+    color 180ms var(--ease-out),
+    transform 180ms var(--ease-out);
 }
 
 .fabrioo-navbar .nav-link:hover,
 .fabrioo-navbar .nav-link:focus {
   color: var(--color-primary-200);
+  transform: translateY(-1px);
 }
 
 /* ===============================
-   Features
+   Feature cards / Product cards
 =============================== */
-section.feature {
-  padding: 80px 0;
-  background: var(--surface);
-  position: relative;
+.feature-card,
+.product-card {
+  background: rgba(255, 255, 255, 0.55);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 14px 16px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+  transition:
+    transform 220ms var(--ease-out),
+    box-shadow 220ms var(--ease-out);
 }
 
+.feature-card:hover,
+.product-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.1);
+}
+
+/* Icon badge styling */
+.icon-badge {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  display: grid;
+  place-items: center;
+  background: rgba(31, 204, 183, 0.14);
+  border: 1px solid rgba(31, 204, 183, 0.25);
+  transition: transform 220ms var(--ease-out);
+}
+
+.feature-card:hover .icon-badge {
+  transform: rotate(-3deg) scale(1.05);
+}
+
+/* ===============================
+   Features section
+=============================== */
+section.feature {
+  background: var(--surface);
+}
 section.feature .features {
   margin-top: 40px;
 }
 
 section.feature .features .d-flex {
-  margin-bottom: 36px;
+  margin-bottom: 18px;
   align-items: flex-start;
   gap: 16px;
 }
@@ -272,19 +319,17 @@ section.feature .feature-img img {
 }
 
 /* ===============================
-   Products / Options
+   Products section
 =============================== */
 section.option {
-  padding: 90px 0;
   background: var(--surface-2);
 }
-
 section.option .options {
   margin-top: 10px;
 }
 
 section.option .options .d-flex {
-  margin-bottom: 36px;
+  margin-bottom: 18px;
   align-items: flex-start;
   gap: 16px;
 }
@@ -307,6 +352,11 @@ section.option .option-img img {
   width: 100%;
   border-radius: 14px;
   box-shadow: var(--shadow);
+  transition: transform 350ms var(--ease-out);
+}
+
+section.option .option-img:hover img {
+  transform: translateY(-6px) rotate(-0.3deg);
 }
 
 /* ===============================
@@ -314,7 +364,6 @@ section.option .option-img img {
 =============================== */
 section.slider {
   background: var(--surface);
-  padding: 80px 0;
 }
 
 section.slider .slider-text h3 {
@@ -341,6 +390,15 @@ section.slider .slider-carousel .carousel-control-next {
   opacity: 1;
   margin-top: 130px;
   background: rgba(255, 255, 255, 0.65);
+  transition:
+    transform 180ms var(--ease-out),
+    background 180ms var(--ease-out);
+}
+
+section.slider .slider-carousel .carousel-control-prev:hover,
+section.slider .slider-carousel .carousel-control-next:hover {
+  transform: scale(1.05);
+  background: rgba(255, 255, 255, 0.85);
 }
 
 section.slider .slider-carousel .carousel-indicators {
@@ -383,7 +441,16 @@ section.faq .overlay .accordion .accordion-item {
   background-color: rgba(255, 255, 255, 0.12);
   margin-bottom: 18px;
   border: 0;
-  border-radius: 0;
+  border-radius: 12px;
+  overflow: hidden;
+  transition:
+    transform 220ms var(--ease-out),
+    box-shadow 220ms var(--ease-out);
+}
+
+section.faq .overlay .accordion .accordion-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.18);
 }
 
 section.faq .overlay .accordion .accordion-item .accordion-header button {
@@ -477,11 +544,14 @@ footer.footer .top-footer .widget li.list-inline-item a {
   display: block;
   text-align: center;
   border-radius: 50%;
-  transition: all 0.25s ease;
+  transition:
+    transform 180ms var(--ease-out),
+    background 180ms var(--ease-out);
 }
 
 footer.footer .top-footer .widget li.list-inline-item a:hover {
   background-color: var(--brand);
+  transform: translateY(-2px);
 }
 
 footer.footer .top-footer .widget ul.tweets {
@@ -516,6 +586,9 @@ footer.footer .top-footer .widget form input {
   background-color: rgba(255, 255, 255, 0.08);
   border-radius: 12px;
   text-align: left;
+  transition:
+    box-shadow 180ms var(--ease-out),
+    transform 180ms var(--ease-out);
 }
 
 footer.footer .top-footer .widget form input::placeholder {
@@ -525,6 +598,7 @@ footer.footer .top-footer .widget form input::placeholder {
 footer.footer .top-footer .widget form input:focus {
   box-shadow: 0 0 0 3px rgba(31, 204, 183, 0.25);
   border-color: rgba(31, 204, 183, 0.55);
+  transform: translateY(-1px);
 }
 
 footer.footer .top-footer .widget form .invalid-feedback {
@@ -540,13 +614,94 @@ footer.footer .copyright {
 }
 
 /* ===============================
+   Reveal on Scroll system
+=============================== */
+.reveal {
+  opacity: 0;
+  transform: translate3d(0, 14px, 0);
+  filter: blur(6px);
+  transition:
+    opacity var(--reveal-duration) var(--ease-out),
+    transform var(--reveal-duration) var(--ease-out),
+    filter var(--reveal-duration) var(--ease-out);
+  will-change: opacity, transform, filter;
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+  filter: blur(0);
+}
+
+.reveal-up {
+  transform: translate3d(0, 18px, 0);
+}
+.reveal-down {
+  transform: translate3d(0, -18px, 0);
+}
+.reveal-left {
+  transform: translate3d(-18px, 0, 0);
+}
+.reveal-right {
+  transform: translate3d(18px, 0, 0);
+}
+.reveal-scale {
+  transform: scale(0.96);
+}
+
+.delay-1 {
+  transition-delay: 120ms;
+}
+.delay-2 {
+  transition-delay: 220ms;
+}
+.delay-3 {
+  transition-delay: 340ms;
+}
+
+/* small hover helper */
+.hover-float {
+  display: inline-block;
+  transition: transform 220ms var(--ease-out);
+}
+.hover-float:hover {
+  transform: translateY(-4px);
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .reveal,
+  .reveal.is-visible {
+    transition: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+    filter: none !important;
+  }
+  .hero-phone-float.is-visible {
+    animation: none !important;
+  }
+  .btn-fabrioo,
+  .hover-float,
+  .feature-card,
+  .product-card,
+  section.option .option-img img,
+  section.faq .overlay .accordion .accordion-item,
+  footer.footer .top-footer .widget li.list-inline-item a {
+    transition: none !important;
+    transform: none !important;
+  }
+}
+
+/* ===============================
    Responsive
 =============================== */
 @media (max-width: 992px) and (min-width: 768px) {
   header.header .header-img {
     min-height: 360px;
   }
-
   section.slider .slider-carousel .carousel-control-prev,
   section.slider .slider-carousel .carousel-control-next {
     margin-top: 60px;
